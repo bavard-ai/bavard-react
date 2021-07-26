@@ -46,20 +46,20 @@ function App() {
 export default App;
 ```
 
-# Popup Chatbot Component
-Add a popup chatbot window to your app like this. It is only possible to render a single instance of the popup window at a time.
+# Popup Window
+Add a popup chatbot window to your app like this. It's only possible to render a single instance of the popup window at a time.
 ```tsx
 <ChatbotWindowPopup agentId="b4d9de5e-2325-4244-98c4-1526643dd0da" />
 ```
-This results causes a popup-style chatbot to appear in the window's lower right corner.
+This will cause a popup-style chatbot to appear in the window's lower right corner.
 
 <div align="center">
   <img src="popup.png" alt="Bavard Popup"/>
 </div>
 <br/>
 
-# Embed Chatbot Component
-Add an embeddable chatbot window to your app like this. You can add as many instances as you like, but each one must have a distinct `widgetId` number which should be a positive integer. The embed window is rendered inside a `div` and the dimension are completely up to you, but we recommend at least 375px in width.
+# Embed Window
+Add an embeddable chatbot window to your app as in the code below. You can add as many instances as you like, but each one must have a distinct `widgetId` number which should be a positive integer. The embed window is rendered inside a `div`. The dimensions are completely up to you, but we recommend at least 375px in width.
 ```tsx
 <ChatbotWindowEmbed
   agentId="b4d9de5e-2325-4244-98c4-1526643dd0da"
@@ -73,11 +73,3 @@ Here's what an embed chatbot window looks like.
   <img src="embed.png" alt="Bavard Embed"/>
 </div>
 <br/>
-
-# Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/bavard-ai/bavard-react/tags). 
-
-# License
-
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bavard-ai/bavard-react/blob/main/LICENSE) file for details
