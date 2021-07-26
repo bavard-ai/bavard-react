@@ -1,4 +1,16 @@
-version: 2
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+  node: circleci/node@1.1
+
+executors:
+  base-10-large:
+    docker:
+      - image: "cypress/base:10"
+    resource_class: large
+    environment:
+      NODE_OPTIONS: --max_old_space_size=4096
+
 references:
   default_config: &default_config
     docker:
@@ -42,6 +54,18 @@ workflows:
     jobs:
       - test:
           context: bavard
+      - cypress/run:
+          timeout: 15m
+          executor: base-10-large
+          context: bavard
+          record: true
+          install-command: |
+            set -eo pipefail
+            npm install
+          requires:
+            - test
+          start: npm run ci:start:test
+          wait-on: "http://localhost:8080"
       - publish:
           context: bavard
           requires:

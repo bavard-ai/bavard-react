@@ -11,7 +11,10 @@
     "ts:lint": "tsc && npm run lint",
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
     "lint:staged": "lint-staged",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
+    "cypress:open": "cypress open --config-file cypress.json",
+    "cypress:test": "start-server-and-test start:test http://localhost:8080 cypress:run",
+    "cypress:run": "cypress run --config-file cypress.json --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -31,16 +34,21 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
     "@bavard/eslint-config-typescript": "^1.0.7",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
-    "babel-jest": "^26.6.0",
+    "babel-jest": "^26.6.3",
+    "cypress": "^8.0.0",
     "eslint-plugin-jest": "^24.4.0",
     "html-webpack-plugin": "^5.3.2",
-    "jest": "26.6.0",
+    "jest": "^26.6.0",
     "react": "*",
     "react-dom": "*",
     "ts-loader": "^9.2.4",

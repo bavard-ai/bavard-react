@@ -1,0 +1,9 @@
+{
+  "chromeWebSecurity": false,
+  "video": true,
+  "defaultCommandTimeout": 10000,
+  "baseUrl": "http://localhost:8080",
+  "viewportWidth": 1200,
+  "viewportHeight": 1000,
+  "projectId": "rp4mfm"
+}
