@@ -1,0 +1,8 @@
+.circleci/
+.vscode/
+node_modules/
+src/
+test/
+tsconfig.json
+tsconfig.test.json
+.eslintrc.js

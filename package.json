@@ -1,0 +1,57 @@
+{
+  "name": "@bavard/bavard-react",
+  "version": "0.0.1",
+  "description": "React components for working with Bavard chatbots",
+  "scripts": {
+    "demo": "webpack serve",
+    "clean": "rm -rf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc --build",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "ts:lint": "tsc && npm run lint",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "lint:staged": "lint-staged",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bavard-ai/bavard-react.git"
+  },
+  "author": "dev@bavard.ai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bavard-ai/bavard-react/issues"
+  },
+  "homepage": "https://github.com/bavard-ai/bavard-react#readme",
+  "engines": {
+    "node": ">=10"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@bavard/eslint-config-typescript": "^1.0.7",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "babel-jest": "^26.6.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "26.6.0",
+    "react": "*",
+    "react-dom": "*",
+    "ts-loader": "^9.2.4",
+    "typescript": "^4.3.5",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@bavard/agent-config": "^0.0.254",
+    "react-use-object-state": "^1.1.4",
+    "use-debounce": "^7.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+version: 2
+references:
+  default_config: &default_config
+    docker:
+      - image: node:15-slim
+
+  test: &test
+    <<: *default_config
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: |
+            set -eo pipefail
+            npm install
+            npm run ts:lint
+
+  publish: &publish
+    <<: *default_config
+    steps:
+      - checkout
+      - run:
+          name: publish
+          command: |
+            set -eo pipefail
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            npm install
+            npm run build
+            cp ./package.json dist
+            cp ./README.md dist
+            cd dist
+            npm publish --access public
+
+jobs:
+  test:
+    <<: *test
+  publish:
+    <<: *publish
+workflows:
+  version: 2
+  test-and-publish:
+    jobs:
+      - test:
+          context: bavard
+      - publish:
+          context: bavard
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
