@@ -81,7 +81,6 @@ workflows:
             <<: *version-tags-only
           requires:
             - test
-            - cypress/run
       - publish:
           context: bavard
           filters:
