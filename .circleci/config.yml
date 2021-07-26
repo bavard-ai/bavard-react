@@ -16,6 +16,14 @@ references:
     docker:
       - image: node:15-slim
 
+  version-tags-only: &version-tags-only
+    # Filter that only matches when there's a git tag representing
+    # a package version.
+    tags:
+      only: /v[0-9]+(\.[0-9]+)*/
+    branches:
+      ignore: /.*/
+
   test: &test
     <<: *default_config
     steps:
@@ -66,11 +74,16 @@ workflows:
             - test
           start: npm run ci:start:test
           wait-on: "http://localhost:8080"
-      - publish:
-          context: bavard
+      - hold:
+          context: bavard-prod
+          type: approval
+          filters:
+            <<: *version-tags-only
           requires:
             - test
             - cypress/run
+      - publish:
+          context: bavard
           filters:
             branches:
               only: main
