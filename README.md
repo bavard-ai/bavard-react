@@ -1,6 +1,16 @@
+
+
+
 # Bavard React Components
 
-A small set of React components for easily including Bavard chatbots in your React app.
+<div align="center">
+
+[![bavard-ai](https://circleci.com/gh/bavard-ai/bavard-react.svg?style=svg&circle-token=8b2c8a300381745b12f110b1a673d3267699cfa1))](https://circleci.com/gh/bavard-ai/bavard-react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
+
+A small set of React components for easily including Bavard chatbots within any React app.
 
 # Setup 
 
@@ -36,3 +46,15 @@ function App() {
 
 export default App;
 ```
+
+# Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/bavard/bavard-ai/tags). 
+
+# Authors
+
+See also the list of [contributors](https://github.com/bavard/bavard-react/contributors) who participated in this project.
+
+# License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
