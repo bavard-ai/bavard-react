@@ -3,7 +3,10 @@
 
 # Bavard React Components
 
+
+
 <div align="center">
+<img src="bavard-with-name.svg" alt="drawing" style="height:100px;"/>
 
 [![bavard-ai](https://circleci.com/gh/bavard-ai/bavard-react.svg?style=svg&circle-token=8b2c8a300381745b12f110b1a673d3267699cfa1))](https://circleci.com/gh/bavard-ai/bavard-react)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
