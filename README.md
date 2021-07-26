@@ -18,7 +18,7 @@ A small set of React components for easily including Bavard chatbots within any 
 ```
 npm i @bavard/bavard-react
 ```
-### 2. Add the Bavard script tag to the `<head>` element of your HTML page.
+### 2. Add the Bavard widget script to the `<head>` element of your HTML page.
 
 ```html
     <script src="https://bavard-widget-prod.web.app/main.bundle.js"></script>
