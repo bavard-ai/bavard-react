@@ -85,7 +85,6 @@ Cypress.Commands.add("clickChatBodyCloseButton", () => {
 });
 
 Cypress.Commands.add("openChatMainBody", () => {
-  cy.visit("/");
   cy.getWidgetTriggerButton().should("be.visible");
   cy.clickWidgetTriggerButton();
   cy.getChatWindow().should("be.visible");
