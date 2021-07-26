@@ -70,6 +70,7 @@ workflows:
           context: bavard
           requires:
             - test
+            - cypress/run
           filters:
             branches:
               only: master
