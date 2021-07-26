@@ -85,5 +85,6 @@ workflows:
       - publish:
           context: bavard
           filters:
-            branches:
-              only: main
+            <<: *version-tags-only
+          requires:
+            - hold
