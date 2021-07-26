@@ -57,7 +57,7 @@ jobs:
   publish:
     <<: *publish
 workflows:
-  version: 2
+  version: 2.1
   test-and-publish:
     jobs:
       - test:
