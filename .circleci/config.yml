@@ -62,6 +62,9 @@ workflows:
     jobs:
       - test:
           context: bavard
+          filters:
+            tags:
+              only: /^$/
       - cypress/run:
           timeout: 15m
           executor: base-10-large
@@ -74,6 +77,9 @@ workflows:
             - test
           start: npm run ci:start:test
           wait-on: "http://localhost:8080"
+          filters:
+            tags:
+              only: /^$/
       - hold:
           context: bavard-prod
           type: approval
