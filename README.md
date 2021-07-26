@@ -48,12 +48,8 @@ export default App;
 
 # Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/bavard/bavard-ai/tags). 
-
-# Authors
-
-See also the list of [contributors](https://github.com/bavard/bavard-react/contributors) who participated in this project.
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/bavard-ai/bavard-react/tags). 
 
 # License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bavard-ai/bavard-react/blob/main/LICENSE) file for details
