@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "React components for working with Bavard chatbots",
   "scripts": {
-    "demo": "webpack serve",
+    "demo": "NODE_ENV=development webpack serve",
     "clean": "rm -rf ./dist",
     "prebuild": "npm run clean",
     "build": "tsc --build",
@@ -14,7 +14,8 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
     "cypress:open": "cypress open --config-file cypress.json",
     "cypress:test": "start-server-and-test start:test http://localhost:8080 cypress:run",
-    "cypress:run": "cypress run --config-file cypress.json --browser chrome"
+    "cypress:run": "cypress run --config-file cypress.json --browser chrome",
+    "ci:start:test": "CI=true NODE_ENV=development webpack serve"
   },
   "repository": {
     "type": "git",
