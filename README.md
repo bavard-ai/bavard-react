@@ -1,9 +1,3 @@
-
-
-
-# Bavard React Components
-
-
 <div align="center">
 <img src="bavard.svg" alt="Bavard Logo" height="100"/>
 
@@ -11,6 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
+
+# Bavard React Components
+
 
 A small set of React components for easily including Bavard chatbots within any React app.
 
