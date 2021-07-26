@@ -64,7 +64,7 @@ workflows:
           context: bavard
           filters:
             tags:
-              only: /^$/
+              only: /.*/
       - cypress/run:
           timeout: 15m
           executor: base-10-large
