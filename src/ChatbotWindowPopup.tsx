@@ -1,3 +1,4 @@
+import { BotType } from "@bavard/widget-loader/types";
 import {
   useRenderBavardChatbotWidget,
   IUseRenderChatbotWindowProps,
@@ -22,7 +23,7 @@ export const ChatbotWindowPopup = ({
     agentId,
     dev,
     startOpen,
-    type: "popup",
+    type: BotType.POPUP,
     debug,
     conversationId,
     onLoaded,

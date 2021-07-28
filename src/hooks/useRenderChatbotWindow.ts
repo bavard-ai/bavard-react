@@ -2,6 +2,8 @@ import { IWidgetSettings } from "@bavard/agent-config";
 import { useCallback, useEffect } from "react";
 import { useCounterState } from "react-use-object-state";
 import { useDebounce } from "use-debounce";
+import "@bavard/widget-loader";
+import { BotType } from "@bavard/widget-loader/types";
 
 export interface IUseRenderChatbotWindowProps {
   agentId: string;
@@ -11,7 +13,7 @@ export interface IUseRenderChatbotWindowProps {
   conversationId?: string | null;
   widgetSettings?: IWidgetSettings | null;
   startOpen?: boolean;
-  type?: "popup" | "embed";
+  type?: BotType;
   onLoaded?: (loading: boolean, delay: number) => void;
 }
 
@@ -20,18 +22,10 @@ export const useRenderBavardChatbotWidget = ({
   ...widgetProps
 }: IUseRenderChatbotWindowProps) => {
   // helps prevent frequent rerenders
-  const {
-    agentId,
-    widgetId,
-    dev,
-    debug,
-    conversationId,
-    widgetSettings,
-    startOpen,
-    type,
-  } = JSON.parse(
-    useDebounce(JSON.stringify(widgetProps), 1000)[0]
-  ) as typeof widgetProps;
+  const { agentId, widgetId, dev, debug, widgetSettings, startOpen, type } =
+    JSON.parse(
+      useDebounce(JSON.stringify(widgetProps), 1000)[0]
+    ) as typeof widgetProps;
   // stringify for dependency array comparison, also for widgetSettings
   // parameters in loadBavard script
   const stringifiedWidgetSettings = widgetSettings
@@ -50,16 +44,12 @@ export const useRenderBavardChatbotWidget = ({
 
   const loadWidget = useCallback(() => {
     unloadWidget();
-
-    (
-      window as unknown as Window & { loadBavard: (params: Object) => void }
-    ).loadBavard({
+    window.loadBavard({
       agentId,
       widgetId,
       debug,
       dev,
       startOpen,
-      conversationId,
       widgetSettings:
         stringifiedWidgetSettings && JSON.parse(stringifiedWidgetSettings),
       type,
@@ -72,7 +62,6 @@ export const useRenderBavardChatbotWidget = ({
     debug,
     dev,
     startOpen,
-    conversationId,
     stringifiedWidgetSettings,
     type,
     onLoaded,

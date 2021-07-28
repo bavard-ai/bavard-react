@@ -1,3 +1,4 @@
+import { BotType } from "@bavard/widget-loader/types";
 import {
   useRenderBavardChatbotWidget,
   IUseRenderChatbotWindowProps,
@@ -15,7 +16,6 @@ export const ChatbotWindowEmbed = ({
   widgetId,
   dev,
   debug,
-  conversationId,
   widgetSettings,
   width = 400,
   height = 600,
@@ -27,9 +27,8 @@ export const ChatbotWindowEmbed = ({
     widgetId,
     dev,
     debug,
-    conversationId,
     widgetSettings,
-    type: "embed",
+    type: BotType.EMBED,
     onLoaded,
   });
 

@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -11,6 +12,12 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
       filename: "index.html",
+    }),
+    new webpack.DefinePlugin({
+      "process.env.BAVARD_ENV": JSON.stringify("development"),
+    }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
     }),
   ],
   resolve: {
