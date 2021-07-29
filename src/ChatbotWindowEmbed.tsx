@@ -20,6 +20,7 @@ export const ChatbotWindowEmbed = ({
   width = 400,
   height = 600,
   style,
+  widgetBaseUrl,
   onLoaded,
 }: ChatbotWindowEmbedProps) => {
   useRenderBavardChatbotWidget({
@@ -29,6 +30,7 @@ export const ChatbotWindowEmbed = ({
     debug,
     widgetSettings,
     type: BotType.EMBED,
+    widgetBaseUrl,
     onLoaded,
   });
 

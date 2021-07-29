@@ -14,6 +14,7 @@ export interface IUseRenderChatbotWindowProps {
   widgetSettings?: IWidgetSettings | null;
   startOpen?: boolean;
   type?: BotType;
+  widgetBaseUrl?: string;
   onLoaded?: (loading: boolean, delay: number) => void;
 }
 
@@ -22,10 +23,18 @@ export const useRenderBavardChatbotWidget = ({
   ...widgetProps
 }: IUseRenderChatbotWindowProps) => {
   // helps prevent frequent rerenders
-  const { agentId, widgetId, dev, debug, widgetSettings, startOpen, type } =
-    JSON.parse(
-      useDebounce(JSON.stringify(widgetProps), 1000)[0]
-    ) as typeof widgetProps;
+  const {
+    agentId,
+    widgetId,
+    dev,
+    debug,
+    widgetSettings,
+    startOpen,
+    type,
+    widgetBaseUrl,
+  } = JSON.parse(
+    useDebounce(JSON.stringify(widgetProps), 1000)[0]
+  ) as typeof widgetProps;
   // stringify for dependency array comparison, also for widgetSettings
   // parameters in loadBavard script
   const stringifiedWidgetSettings = widgetSettings
@@ -50,6 +59,7 @@ export const useRenderBavardChatbotWidget = ({
       debug,
       dev,
       startOpen,
+      widgetBaseUrl,
       widgetSettings:
         stringifiedWidgetSettings && JSON.parse(stringifiedWidgetSettings),
       type,
@@ -62,6 +72,7 @@ export const useRenderBavardChatbotWidget = ({
     debug,
     dev,
     startOpen,
+    widgetBaseUrl,
     stringifiedWidgetSettings,
     type,
     onLoaded,

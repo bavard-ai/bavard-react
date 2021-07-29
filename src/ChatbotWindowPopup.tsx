@@ -16,6 +16,7 @@ export const ChatbotWindowPopup = ({
   conversationId,
   widgetSettings,
   startOpen = false,
+  widgetBaseUrl,
   onLoaded,
 }: BavardChatbotProps) => {
   useRenderBavardChatbotWidget({
@@ -26,6 +27,7 @@ export const ChatbotWindowPopup = ({
     type: BotType.POPUP,
     debug,
     conversationId,
+    widgetBaseUrl,
     onLoaded,
   });
   return null;
