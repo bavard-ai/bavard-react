@@ -1,7 +1,7 @@
 <div align="center">
 <img src="bavard.svg" alt="Bavard Logo" height="100"/>
 
-[![bavard-ai](https://circleci.com/gh/bavard-ai/bavard-react.svg?style=svg)](https://circleci.com/gh/bavard-ai/bavard-react)
+[![CircleCI](https://circleci.com/gh/bavard-ai/bavard-react/tree/main.svg?style=svg)](https://circleci.com/gh/bavard-ai/bavard-react/tree/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>

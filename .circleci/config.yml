@@ -4,9 +4,9 @@ orbs:
   node: circleci/node@1.1
 
 executors:
-  base-10-large:
+  cypress-large:
     docker:
-      - image: "cypress/base:10"
+      - image: "cypress/base:14.17.0"
     resource_class: large
     environment:
       NODE_OPTIONS: --max_old_space_size=4096
@@ -67,11 +67,12 @@ workflows:
               only: /.*/
       - cypress/run:
           timeout: 15m
-          executor: base-10-large
+          executor: cypress-large
           context: bavard
           record: true
           install-command: |
             set -eo pipefail
+            npm install -g npm
             npm install
           requires:
             - test
