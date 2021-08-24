@@ -17,6 +17,7 @@ export const ChatbotWindowPopup = ({
   widgetSettings,
   startOpen = false,
   widgetBaseUrl,
+  ignorePaths,
   onLoaded,
 }: BavardChatbotProps) => {
   useRenderBavardChatbotWidget({
@@ -28,6 +29,7 @@ export const ChatbotWindowPopup = ({
     debug,
     conversationId,
     widgetBaseUrl,
+    ignorePaths,
     onLoaded,
   });
   return null;
