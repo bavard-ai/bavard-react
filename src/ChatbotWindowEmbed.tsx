@@ -5,7 +5,10 @@ import {
 } from "./hooks/useRenderChatbotWindow";
 
 interface ChatbotWindowEmbedProps
-  extends Omit<IUseRenderChatbotWindowProps, "type" | "startOpen"> {
+  extends Omit<
+    IUseRenderChatbotWindowProps,
+    "type" | "startOpen" | "ignorePaths"
+  > {
   width?: number;
   height?: number;
   style?: React.CSSProperties;

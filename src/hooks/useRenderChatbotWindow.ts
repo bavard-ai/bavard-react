@@ -15,6 +15,10 @@ export interface IUseRenderChatbotWindowProps {
   startOpen?: boolean;
   type?: BotType;
   widgetBaseUrl?: string;
+  /**
+   * If true, this causes the include/exclude paths in widgetSettings to be ignored.
+   */
+  ignorePaths?: boolean;
   onLoaded?: (loading: boolean, delay: number) => void;
 }
 
@@ -31,6 +35,7 @@ export const useRenderBavardChatbotWidget = ({
     widgetSettings,
     startOpen,
     type,
+    ignorePaths,
     widgetBaseUrl,
   } = JSON.parse(
     useDebounce(JSON.stringify(widgetProps), 1000)[0]
@@ -63,6 +68,7 @@ export const useRenderBavardChatbotWidget = ({
       widgetSettings:
         stringifiedWidgetSettings && JSON.parse(stringifiedWidgetSettings),
       type,
+      ignorePaths,
     });
     onLoaded?.(false, 1000);
   }, [
@@ -75,6 +81,7 @@ export const useRenderBavardChatbotWidget = ({
     widgetBaseUrl,
     stringifiedWidgetSettings,
     type,
+    ignorePaths,
     onLoaded,
   ]);
 

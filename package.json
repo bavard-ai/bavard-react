@@ -1,6 +1,6 @@
 {
   "name": "@bavard/bavard-react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React components for working with Bavard chatbots",
   "scripts": {
     "start": "NODE_ENV=development webpack serve",
@@ -60,8 +60,8 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
-    "@bavard/agent-config": "0.1.20",
-    "@bavard/widget-loader": "0.0.7",
+    "@bavard/agent-config": "0.1.21",
+    "@bavard/widget-loader": "0.0.8",
     "react-use-object-state": "^1.1.4",
     "use-debounce": "^7.0.0",
     "util": "^0.12.4"
