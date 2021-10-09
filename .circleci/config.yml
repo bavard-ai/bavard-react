@@ -20,7 +20,7 @@ references:
     # Filter that only matches when there's a git tag representing
     # a package version.
     tags:
-      only: /v[0-9]+(\.[0-9]+)*/
+      only: /[0-9]+(\.[0-9]+)*/
     branches:
       ignore: /.*/
 
