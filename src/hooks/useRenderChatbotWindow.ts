@@ -6,9 +6,22 @@ import "@bavard/widget-loader";
 import { BotType } from "@bavard/widget-loader/types";
 
 export interface IUseRenderChatbotWindowProps {
+  /**
+   * The UUID of the chatbot.
+   */
   agentId: string;
+  /**
+   * A positive integer (1,2,3,...) specifying an id for the chat-window if multiple windows are using in the same page or app.
+   */
   widgetId?: number;
+  /**
+   * A flag indicating whether the window will communicate with the draft version or the live published version of the chatbot.
+   */
   dev?: boolean;
+  /**
+   * True if this is a demo conversation. Demo conversations are not included for analytics reporting.
+   */
+  demo?: boolean;
   debug?: boolean;
   conversationId?: string | null;
   widgetSettings?: IWidgetSettings | null;
@@ -31,6 +44,7 @@ export const useRenderBavardChatbotWidget = ({
     agentId,
     widgetId,
     dev,
+    demo,
     debug,
     widgetSettings,
     startOpen,
@@ -63,6 +77,7 @@ export const useRenderBavardChatbotWidget = ({
       widgetId,
       debug,
       dev,
+      demo,
       startOpen,
       widgetBaseUrl,
       widgetSettings:
@@ -77,6 +92,7 @@ export const useRenderBavardChatbotWidget = ({
     widgetId,
     debug,
     dev,
+    demo,
     startOpen,
     widgetBaseUrl,
     stringifiedWidgetSettings,

@@ -14,7 +14,7 @@ executors:
 references:
   default_config: &default_config
     docker:
-      - image: node:15-slim
+      - image: node:16-slim
 
   version-tags-only: &version-tags-only
     # Filter that only matches when there's a git tag representing

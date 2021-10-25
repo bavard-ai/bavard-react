@@ -12,6 +12,7 @@ type BavardChatbotProps = Omit<
 export const ChatbotWindowPopup = ({
   agentId,
   dev,
+  demo,
   debug,
   conversationId,
   widgetSettings,
@@ -24,6 +25,7 @@ export const ChatbotWindowPopup = ({
     widgetSettings,
     agentId,
     dev,
+    demo,
     startOpen,
     type: BotType.POPUP,
     debug,
