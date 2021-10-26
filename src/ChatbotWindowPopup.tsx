@@ -4,13 +4,11 @@ import {
   IUseRenderChatbotWindowProps,
 } from "./hooks/useRenderChatbotWindow";
 
-type BavardChatbotProps = Omit<
-  IUseRenderChatbotWindowProps,
-  "skip" | "widgetId"
->;
+type BavardChatbotProps = Omit<IUseRenderChatbotWindowProps, "skip">;
 
 export const ChatbotWindowPopup = ({
   agentId,
+  widgetId,
   dev,
   demo,
   debug,
@@ -24,6 +22,7 @@ export const ChatbotWindowPopup = ({
   useRenderBavardChatbotWidget({
     widgetSettings,
     agentId,
+    widgetId,
     dev,
     demo,
     startOpen,

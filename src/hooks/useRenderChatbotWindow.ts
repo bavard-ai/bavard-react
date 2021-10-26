@@ -52,7 +52,7 @@ export const useRenderBavardChatbotWidget = ({
     ignorePaths,
     widgetBaseUrl,
   } = JSON.parse(
-    useDebounce(JSON.stringify(widgetProps), 1000)[0]
+    useDebounce(JSON.stringify(widgetProps), 1000, { leading: true })[0]
   ) as typeof widgetProps;
   // stringify for dependency array comparison, also for widgetSettings
   // parameters in loadBavard script
@@ -63,11 +63,7 @@ export const useRenderBavardChatbotWidget = ({
   const forceUpdate = useCounterState();
 
   const unloadWidget = useCallback(() => {
-    (
-      window as unknown as Window & {
-        unloadBavard?: (widgetId?: number) => void;
-      }
-    ).unloadBavard?.(widgetId || 0);
+    window.unloadBavard?.(widgetId, false);
   }, [widgetId]);
 
   const loadWidget = useCallback(() => {
