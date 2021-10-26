@@ -52,7 +52,7 @@ export const useRenderBavardChatbotWidget = ({
     ignorePaths,
     widgetBaseUrl,
   } = JSON.parse(
-    useDebounce(JSON.stringify(widgetProps), 1000, { leading: true })[0]
+    useDebounce(JSON.stringify(widgetProps), 1000)[0]
   ) as typeof widgetProps;
   // stringify for dependency array comparison, also for widgetSettings
   // parameters in loadBavard script
