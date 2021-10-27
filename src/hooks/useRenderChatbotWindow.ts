@@ -4,6 +4,7 @@ import { useCounterState } from "react-use-object-state";
 import { useDebounce } from "use-debounce";
 import "@bavard/widget-loader";
 import { BotType } from "@bavard/widget-loader/types";
+import { updateWidgetSettings } from "../utils";
 
 export interface IUseRenderChatbotWindowProps {
   /**
@@ -24,7 +25,7 @@ export interface IUseRenderChatbotWindowProps {
   demo?: boolean;
   debug?: boolean;
   conversationId?: string | null;
-  widgetSettings?: IWidgetSettings | null;
+  widgetSettings?: IWidgetSettings;
   startOpen?: boolean;
   type?: BotType;
   widgetBaseUrl?: string;
@@ -37,7 +38,7 @@ export interface IUseRenderChatbotWindowProps {
 
 export const useRenderBavardChatbotWidget = ({
   onLoaded,
-  ...widgetProps
+  ...props
 }: IUseRenderChatbotWindowProps) => {
   // helps prevent frequent rerenders
   const {
@@ -46,18 +47,15 @@ export const useRenderBavardChatbotWidget = ({
     dev,
     demo,
     debug,
-    widgetSettings,
     startOpen,
     type,
     ignorePaths,
     widgetBaseUrl,
-  } = JSON.parse(
-    useDebounce(JSON.stringify(widgetProps), 1000)[0]
-  ) as typeof widgetProps;
-  // stringify for dependency array comparison, also for widgetSettings
-  // parameters in loadBavard script
-  const stringifiedWidgetSettings = widgetSettings
-    ? JSON.stringify(widgetSettings)
+  } = JSON.parse(useDebounce(JSON.stringify(props), 1000)[0]) as typeof props;
+
+  // stringify for dependency array comparison
+  const stringifiedWidgetSettings = props.widgetSettings
+    ? JSON.stringify(props.widgetSettings)
     : null;
 
   const forceUpdate = useCounterState();
@@ -76,12 +74,15 @@ export const useRenderBavardChatbotWidget = ({
       demo,
       startOpen,
       widgetBaseUrl,
-      widgetSettings:
-        stringifiedWidgetSettings && JSON.parse(stringifiedWidgetSettings),
+      widgetSettings: props.widgetSettings,
       type,
       ignorePaths,
     });
+
     onLoaded?.(false, 1000);
+    // Don't include widgetSettings in dependency array or it will cause a reload every time they change.
+    // Updates to the widgetSettings are handled in a separate useEffect below.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     unloadWidget,
     agentId,
@@ -91,11 +92,17 @@ export const useRenderBavardChatbotWidget = ({
     demo,
     startOpen,
     widgetBaseUrl,
-    stringifiedWidgetSettings,
     type,
     ignorePaths,
     onLoaded,
   ]);
+
+  // Handle widget settings updates.
+  useEffect(() => {
+    if (stringifiedWidgetSettings) {
+      updateWidgetSettings(JSON.parse(stringifiedWidgetSettings), widgetId);
+    }
+  }, [stringifiedWidgetSettings, widgetId]);
 
   useEffect(() => {
     loadWidget();
