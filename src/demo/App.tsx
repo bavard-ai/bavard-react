@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     bavardClearStorage(0);
     bavardClearStorage(1);
-  }, []);
+  }, [dev]);
 
   return (
     <div>
@@ -87,7 +87,7 @@ function App() {
           widgetId={0}
           agentId="b4d9de5e-2325-4244-98c4-1526643dd0da"
           demo
-          dev
+          dev={dev}
         />
         <ChatbotWindowEmbed
           agentId="b4d9de5e-2325-4244-98c4-1526643dd0da"

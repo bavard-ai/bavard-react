@@ -1,5 +1,5 @@
 import { IWidgetSettings } from "@bavard/agent-config";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useCounterState } from "react-use-object-state";
 import { useDebounce } from "use-debounce";
 import "@bavard/widget-loader";
@@ -112,7 +112,7 @@ export const useRenderBavardChatbotWidget = ({
     return () => {
       unloadWidget();
     };
-  }, [dev, unloadWidget, loadWidget, forceUpdate.count]);
+  }, [unloadWidget, loadWidget, forceUpdate.count]);
 
   return {
     reload: forceUpdate.increment,
