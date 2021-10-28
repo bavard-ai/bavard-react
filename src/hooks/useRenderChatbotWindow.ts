@@ -1,5 +1,5 @@
 import { IWidgetSettings } from "@bavard/agent-config";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect } from "react";
 import { useCounterState } from "react-use-object-state";
 import { useDebounce } from "use-debounce";
 import "@bavard/widget-loader";
@@ -52,7 +52,9 @@ export const useRenderBavardChatbotWidget = ({
     ignorePaths,
     widgetBaseUrl,
   } = JSON.parse(
-    useDebounce(JSON.stringify(props), 1000, { leading: true })[0]
+    useDebounce(JSON.stringify(props), 1000, {
+      leading: true,
+    })[0]
   ) as typeof props;
 
   // stringify for dependency array comparison
