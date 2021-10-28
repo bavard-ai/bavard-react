@@ -54,6 +54,7 @@ export const useRenderBavardChatbotWidget = ({
   } = JSON.parse(
     useDebounce(JSON.stringify(props), 1000, {
       leading: true,
+      trailing: false,
     })[0]
   ) as typeof props;
 
