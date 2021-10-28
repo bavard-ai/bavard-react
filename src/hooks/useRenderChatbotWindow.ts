@@ -51,7 +51,9 @@ export const useRenderBavardChatbotWidget = ({
     type,
     ignorePaths,
     widgetBaseUrl,
-  } = JSON.parse(useDebounce(JSON.stringify(props), 1000)[0]) as typeof props;
+  } = JSON.parse(
+    useDebounce(JSON.stringify(props), 1000, { leading: true })[0]
+  ) as typeof props;
 
   // stringify for dependency array comparison
   const stringifiedWidgetSettings = props.widgetSettings
@@ -110,7 +112,7 @@ export const useRenderBavardChatbotWidget = ({
     return () => {
       unloadWidget();
     };
-  }, [unloadWidget, loadWidget, forceUpdate.count]);
+  }, [dev, unloadWidget, loadWidget, forceUpdate.count]);
 
   return {
     reload: forceUpdate.increment,
