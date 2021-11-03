@@ -1,6 +1,6 @@
 {
   "name": "@bavard/bavard-react",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "React components for working with Bavard chatbots",
   "scripts": {
     "start": "NODE_ENV=development webpack serve",
@@ -41,11 +41,11 @@
     "@babel/preset-typescript": "^7.16.0",
     "@bavard/eslint-config-typescript": "^1.0.7",
     "@emotion/react": "^11.5.0",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
     "babel-jest": "^27.3.1",
     "cypress": "^8.7.0",
     "eslint-plugin-jest": "^25.2.2",
@@ -61,8 +61,8 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
-    "@bavard/agent-config": "0.1.48",
-    "@bavard/widget-loader": "0.0.32",
+    "@bavard/agent-config": "0.1.51",
+    "@bavard/widget-loader": "0.0.33",
     "react-use-object-state": "^1.1.4",
     "use-debounce": "^7.0.0",
     "util": "^0.12.4"
