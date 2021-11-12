@@ -61,7 +61,7 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
-    "@bavard/agent-config": "0.1.55",
+    "@bavard/agent-config": "0.1.57",
     "@bavard/widget-loader": "0.0.33",
     "react-use-object-state": "^1.1.4",
     "use-debounce": "^7.0.0",
