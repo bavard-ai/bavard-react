@@ -1,6 +1,6 @@
 {
   "name": "@bavard/bavard-react",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "React components for working with Bavard chatbots",
   "scripts": {
     "start": "NODE_ENV=development webpack serve",
@@ -35,36 +35,36 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@bavard/eslint-config-typescript": "^1.0.7",
-    "@emotion/react": "^11.5.0",
-    "@testing-library/jest-dom": "^5.15.0",
+    "@emotion/react": "^11.7.1",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
-    "@types/jest": "^27.0.2",
-    "@types/react": "^17.0.34",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "babel-jest": "^27.3.1",
-    "cypress": "^8.7.0",
-    "eslint-plugin-jest": "^25.2.2",
+    "babel-jest": "^27.4.6",
+    "cypress": "^9.2.0",
+    "eslint-plugin-jest": "^25.3.4",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.3.1",
+    "jest": "^27.4.7",
     "process": "^0.11.10",
     "react": "*",
     "react-dom": "*",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.4.4",
-    "webpack": "^5.61.0",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.4.0"
+    "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
     "@bavard/agent-config": "0.1.61",
     "@bavard/widget-loader": "0.0.33",
     "react-use-object-state": "^1.1.4",
-    "use-debounce": "^7.0.0",
+    "use-debounce": "^7.0.1",
     "util": "^0.12.4"
   }
 }
